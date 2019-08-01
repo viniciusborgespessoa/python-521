@@ -10,18 +10,28 @@ app = flask.Flask(__name__)
 def get_index():
 	return 'hello, world2'
 
-
-@app.route('/users', methods=[ 'GET'])
+ 
+@app.route('/users', methods=[ 'GET' ])
 def get_users():
 	return 'users'
 
-@app.route('/users', methods=[ 'POST'])
+@app.route('/users', methods=[ 'POST' ])
 def post_users():
 	return 'post users'
 
-@app.route('/users/<int:user_id>', methods=[ 'GET'])
+@app.route('/users/<int:user_id>', methods=[ 'GET' ])
 def get_users_by_id(user_id):
 	return 'get users ' + str(user_id)
+
+@app.route('/users/<int:user_id>', methods=[ 'PUT' ])
+def put_users_by_id(user_id):
+	return 'put users ' + str(user_id)
+
+@app.route('/users/<int:user_id>', methods=[ 'DELETE' ])
+def delete_users_by_id(user_id):
+	return 'delete users ' + str(user_id)
+
+
 
 if __name__ == '__main__':
 
