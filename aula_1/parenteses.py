@@ -51,4 +51,4 @@ def login_required(fn):
         if not user.authenticated():
             return 'permission denied', 403
         return fn(*args, **kwargs)
-    return wrapper
+    return wrappe
